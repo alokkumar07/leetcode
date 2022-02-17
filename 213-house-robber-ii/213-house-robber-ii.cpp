@@ -1,0 +1,32 @@
+class Solution {
+public:
+    long long int solve(vector<int>& arr){
+    int n = arr.size();
+    long long int prev = arr[0];
+    long long int prev2 =0;
+    
+    for(int i=1; i<n; i++){
+        long long int pick = arr[i];
+        if(i>1)
+            pick += prev2;
+        int long long nonPick = 0 + prev;
+        
+        long long int cur_i = max(pick, nonPick);
+        prev2 = prev;
+        prev= cur_i;
+        
+    }
+    return prev;
+    }
+    int rob(vector<int>& nums) {
+        int n=nums.size();
+        if(n==1) return nums[0];
+        vector<int> temp1,temp2;
+        for(int i=0;i<n;i++){
+        if(i!=0) temp1.push_back(nums[i]);
+          if(i!=n-1) temp2.push_back(nums[i]);
+        }
+        return max(solve(temp1),solve(temp2));
+        
+    }
+};
