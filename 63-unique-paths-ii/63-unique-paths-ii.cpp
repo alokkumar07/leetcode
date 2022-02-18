@@ -11,8 +11,10 @@ public:
          return dp[i][j]= up+left;
          
      }
-    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {  int m=obstacleGrid.size();
-                                                                     int n=obstacleGrid[0].size();
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) { 
+        int m=obstacleGrid.size();
+                                                                    
+        int n=obstacleGrid[0].size();
         vector<vector<int>> dp(m ,vector<int>(n,-1));
      return f(m-1,n-1,obstacleGrid,dp);                                                          
         
