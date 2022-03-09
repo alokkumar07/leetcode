@@ -2,16 +2,16 @@ class Solution {
 public:
     int lengthOfLastWord(string s) {
         int ans=0;
-        bool fa=false;
+        bool flag=false;
         for(int i=s.length()-1;i>=0;i--)
         {
-            if(s[i]==' ' && fa==true)
+            if(s[i]==' ' && flag==true)
             {
                 break;
             }
             else if(s[i]!=' ')
             {
-                fa=true;
+                flag=true;
                 ans++;
             }
 
